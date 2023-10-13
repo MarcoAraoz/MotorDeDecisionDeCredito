@@ -53,9 +53,9 @@ function calculoMotor(tipoNomina, fechaPrimerEmpleo, genero) {
   }
   
   // Ejemplo de uso
-  var tipoNomina = "B";
-  var fechaPrimerEmpleo = new Date("2020-03-15");
-  var genero = "m";
+//   var tipoNomina = "B";
+//   var fechaPrimerEmpleo = new Date("2020-03-15");
+//   var genero = "m";
   
-  var resultado = calculoMotor(tipoNomina, fechaPrimerEmpleo, genero);
+  var resultado = calculoMotor();
   console.log(resultado);
