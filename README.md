@@ -27,3 +27,10 @@ montoMaximo = 5000;
 
 La salida de la función será un objeto que contenga los atributos: montoMinimo, montoMáximo y
 recomendacionLinea los cuales deberán de contener el monto mínimo y máximo de crédito y la recomendación óptima de la línea de crédito respectivamente.
+
+## Se creo un archivo js: mesesTabajando.js
+
+Con la finalidad de resolver cuántos meses se llevaba laborando apartir del ingreso del empleado,
+se desarrolló una función extra
+
+![Alt text](image-1.png)

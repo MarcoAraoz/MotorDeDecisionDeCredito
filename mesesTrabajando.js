@@ -14,7 +14,7 @@ function calcularMesesTrabajando(diaIngreso, mesIngreso, añoIngreso) {
 // Solicitar al usuario que ingrese la fecha de ingreso
 var diaIngreso = prompt("Ingresa el día de ingreso:");
 var mesIngreso =
-  prompt("Ingresa el mes de ingreso (1 para enero, 2 para febrero, etc.):") - 1;
+  prompt("Ingresa el mes de ingreso (1 para enero, 2 para febrero, etc.):");
 var añoIngreso = prompt("Ingresa el año de ingreso:");
 
 var resultado = calcularMesesTrabajando(diaIngreso, mesIngreso, añoIngreso);
