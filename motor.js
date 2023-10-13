@@ -1,12 +1,13 @@
 const prompt= require("prompt-sync")({sigint:true}); 
-const { fechaPrimerEmpleo } = require('./mesesTrabajando')
+// const { calcularMesesTrabajando, } = require('./mesesTrabajando')
+
 
 function calculoMotor(tipoNomina, fechaPrimerEmpleo, genero) {
     // Si los parámetros no se proporcionan, solicitarlos mediante prompts
     if (!tipoNomina) {
       tipoNomina = prompt("Ingrese el tipo de nómina (A, B, C, D):");
     }
-    if (!fechaPrimerEmpleo()) {
+    if (!fechaPrimerEmpleo) {
       var fechaStr = prompt("Ingrese la fecha de primer empleo (YYYY-MM-DD):");
       fechaPrimerEmpleo = new Date(fechaStr);
     }
@@ -58,4 +59,3 @@ function calculoMotor(tipoNomina, fechaPrimerEmpleo, genero) {
   
   var resultado = calculoMotor(tipoNomina, fechaPrimerEmpleo, genero);
   console.log(resultado);
-

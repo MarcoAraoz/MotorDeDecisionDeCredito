@@ -1,5 +1,5 @@
 const prompt = require("prompt-sync")({ sigint: true });
-function fechaPrimerEmpleo(diaIngreso, mesIngreso, añoIngreso) {
+function calcularMesesTrabajando(diaIngreso, mesIngreso, añoIngreso) {
   var fechaIngreso = new Date(añoIngreso, mesIngreso - 1, diaIngreso);
 
   var fechaActual = new Date();
@@ -17,7 +17,7 @@ var mesIngreso =
   prompt("Ingresa el mes de ingreso (1 para enero, 2 para febrero, etc.):") - 1;
 var añoIngreso = prompt("Ingresa el año de ingreso:");
 
-var resultado = fechaPrimerEmpleo(diaIngreso, mesIngreso, añoIngreso);
+var resultado = calcularMesesTrabajando(diaIngreso, mesIngreso, añoIngreso);
 console.log("Meses trabajando: " + resultado);
 
-module.exports = { fechaPrimerEmpleo };
+module.exports = { calcularMesesTrabajando };
