@@ -3,11 +3,13 @@
 ## Packages
 "prompt-sync" (para ejecutar prompts en la consola)
 
-Este código en JavaScript se encarga de calcular una serie de valores para recomendar una "Línea de crédito óptima" para un individuo. 
+![Alt text](image-1.png)
+
+### Este código en JavaScript se encarga de calcular una serie de valores para recomendar una "Línea de crédito óptima" para un individuo. 
 
 Aquí hay una explicación paso a paso de lo que hace el código:
 
-## Se creo un archivo js: motor.js
+## Se creó un archivo js: motor.js
 
 Se define una función llamada calculoMotor que toma tres argumentos: tipoNomina, fechaPrimerEmpleo, y genero. Estos argumentos son opcionales, lo que significa que el código puede solicitar al usuario que los ingrese si no se proporcionan.
 

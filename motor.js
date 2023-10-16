@@ -143,5 +143,5 @@ function calculoMotor(tipoNomina, fechaPrimerEmpleo, genero) {
   return resultado;
 }
 
-var resultado = calculoMotor()
+var resultado = calculoMotor();
 console.table(resultado);
