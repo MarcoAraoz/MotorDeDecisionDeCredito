@@ -8,7 +8,7 @@ function calculoMotor(tipoNomina, fechaPrimerEmpleo, genero) {
   }
   if (!fechaPrimerEmpleo) {
     function calcularMesesTrabajando(diaIngreso, mesIngreso, añoIngreso) {
-      var fechaIngreso = new Date(añoIngreso, mesIngreso - 1, diaIngreso);
+      var fechaIngreso = new Date(añoIngreso, mesIngreso -1, diaIngreso);
 
       var fechaActual = new Date();
 
@@ -25,7 +25,11 @@ function calculoMotor(tipoNomina, fechaPrimerEmpleo, genero) {
     );
     var añoIngreso = prompt("Ingresa el año de ingreso (AAAA):");
 
-    var resultadoMeses = calcularMesesTrabajando(diaIngreso, mesIngreso, añoIngreso);
+    var resultadoMeses = calcularMesesTrabajando(
+      diaIngreso,
+      mesIngreso,
+      añoIngreso
+    );
     console.log("Meses trabajando: " + resultadoMeses);
   }
   if (!genero) {
@@ -46,14 +50,18 @@ function calculoMotor(tipoNomina, fechaPrimerEmpleo, genero) {
   } else if (tipoNomina === "A" && genero === "m" && resultadoMeses == 29) {
     montoMinimo = 100;
     montoMaximo = 4600;
-  } else if ( tipoNomina === "A" && genero === "m" && resultadoMeses >= 30) {
+  } else if (tipoNomina === "A" && genero === "m" && resultadoMeses >= 30) {
     montoMinimo = 600;
     montoMaximo = 4500;
   }
 
-  if (genero === "m" || 'f') {
-    recomendacionLinea = montoMinimo + Math.sqrt(montoMaximo - montoMinimo);
-  } 
+  if (genero === "m" || "f") {
+    p1= montoMinimo + Math.sqrt(montoMaximo - montoMinimo)
+    console.log(p1);
+    p2= montoMinimo + 0.0175 * (montoMaximo - montoMinimo)
+    console.log(p2);
+    recomendacionLinea = Math.max(p1, p2);
+  }
 
   var resultado = {
     Tipo_Nomina: tipoNomina,

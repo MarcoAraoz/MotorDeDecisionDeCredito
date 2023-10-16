@@ -3,8 +3,6 @@
 ## Packages
 "prompt-sync" (para ejecutar prompts en la consola)
 
-![Alt text](image.png)
-
 Este código en JavaScript se encarga de calcular una serie de valores para recomendar una "Línea de crédito óptima" para un individuo. 
 
 Aquí hay una explicación paso a paso de lo que hace el código:
@@ -37,4 +35,4 @@ Se llama a la función calculoMotor sin argumentos para ejecutarla y se almacena
 
 ## Presentación de resultados
 
-![Alt text](image-4.png)
+![Alt text](image-5.png)
