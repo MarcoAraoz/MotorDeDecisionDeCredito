@@ -1,4 +1,3 @@
-// import { calcularMesesTrabajando } from './mesesTrabajando'
 const prompt = require("prompt-sync")({ sigint: true });
 
 function calculoMotor(tipoNomina, fechaPrimerEmpleo, genero) {
@@ -6,7 +5,6 @@ function calculoMotor(tipoNomina, fechaPrimerEmpleo, genero) {
     tipoNomina = prompt("Ingrese el tipo de nómina (A, B, C, D):");
   }
   if (!fechaPrimerEmpleo) {
-    // calcularMesesTrabajando()
     function calcularMesesTrabajando(diaIngreso, mesIngreso, añoIngreso) {
       var fechaIngreso = new Date(añoIngreso, mesIngreso - 1, diaIngreso);
 
@@ -19,7 +17,6 @@ function calculoMotor(tipoNomina, fechaPrimerEmpleo, genero) {
 
       return mesesTrabajando;
     }
-    // Solicitar al usuario que ingrese la fecha de ingreso
     var diaIngreso = prompt("Día de ingreso (DD):");
     var mesIngreso = prompt(
       "Mes de ingreso (1 para enero, 2 para febrero, etc.):"
@@ -28,9 +25,6 @@ function calculoMotor(tipoNomina, fechaPrimerEmpleo, genero) {
 
     var resultado = calcularMesesTrabajando(diaIngreso, mesIngreso, añoIngreso);
     console.log("Meses trabajando: " + resultado);
-
-    // var fechaStr = prompt("Ingrese la fecha de primer empleo (YYYY-MM-DD):");
-    // fechaPrimerEmpleo = new Date(fechaStr);
   }
   if (!genero) {
     genero = prompt("Ingrese el género (m o f):");
