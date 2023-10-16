@@ -1,0 +1,2 @@
+# Ignora directorios de dependencias y módulos de Node.js
+node_modules/
