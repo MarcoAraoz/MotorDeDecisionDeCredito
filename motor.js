@@ -2,7 +2,9 @@ const prompt = require("prompt-sync")({ sigint: true });
 
 function calculoMotor(tipoNomina, fechaPrimerEmpleo, genero) {
   if (!tipoNomina) {
-    tipoNomina = prompt("Ingrese el tipo de nómina (A, B, C, D):");
+    tipoNomina = prompt(
+      "Ingrese el tipo de nómina (A, B, C, D):"
+    ).toUpperCase();
   }
   if (!fechaPrimerEmpleo) {
     function calcularMesesTrabajando(diaIngreso, mesIngreso, añoIngreso) {
@@ -23,8 +25,8 @@ function calculoMotor(tipoNomina, fechaPrimerEmpleo, genero) {
     );
     var añoIngreso = prompt("Ingresa el año de ingreso (AAAA):");
 
-    var resultado = calcularMesesTrabajando(diaIngreso, mesIngreso, añoIngreso);
-    console.log("Meses trabajando: " + resultado);
+    var resultadoMeses = calcularMesesTrabajando(diaIngreso, mesIngreso, añoIngreso);
+    console.log("Meses trabajando: " + resultadoMeses);
   }
   if (!genero) {
     genero = prompt("Ingrese el género (m o f):");
@@ -32,36 +34,35 @@ function calculoMotor(tipoNomina, fechaPrimerEmpleo, genero) {
 
   var montoMinimo, montoMaximo, recomendacionLinea;
 
-  if (tipoNomina === "A") {
-    montoMinimo = 5000;
-    montoMaximo = 10000;
-  } else if (tipoNomina === "B") {
-    montoMinimo = 3000;
-    montoMaximo = 7000;
-  } else if (tipoNomina === "C") {
-    montoMinimo = 2000;
-    montoMaximo = 5000;
-  } else if (tipoNomina === "D") {
-    montoMinimo = 1000;
-    montoMaximo = 3000;
+  if (tipoNomina === "A" && genero === "m" && resultadoMeses <= 26) {
+    montoMinimo = 100;
+    montoMaximo = 4900;
+  } else if (tipoNomina === "A" && genero === "m" && resultadoMeses == 27) {
+    montoMinimo = 400;
+    montoMaximo = 4700;
+  } else if (tipoNomina === "A" && genero === "m" && resultadoMeses == 28) {
+    montoMinimo = 900;
+    montoMaximo = 4600;
+  } else if (tipoNomina === "A" && genero === "m" && resultadoMeses == 29) {
+    montoMinimo = 100;
+    montoMaximo = 4600;
+  } else if ( tipoNomina === "A" && genero === "m" && resultadoMeses >= 30) {
+    montoMinimo = 600;
+    montoMaximo = 4500;
   }
 
-  if (genero === "m") {
-    recomendacionLinea = "Línea de crédito óptima para hombres";
-  } else if (genero === "f") {
-    recomendacionLinea = "Línea de crédito óptima para mujeres";
-  } else {
-    recomendacionLinea = "Línea de crédito no determinada";
-  }
+  if (genero === "m" || 'f') {
+    recomendacionLinea = montoMinimo + Math.sqrt(montoMaximo - montoMinimo);
+  } 
 
   var resultado = {
     Tipo_Nomina: tipoNomina,
     Fecha_Primer_Empleo: `${diaIngreso}-${mesIngreso}-${añoIngreso}`,
-    Meses_Laborados: resultado,
+    Meses_Laborados: resultadoMeses,
     Genero: genero,
     montoMinimo: montoMinimo,
     montoMaximo: montoMaximo,
-    recomendacionLinea: recomendacionLinea,
+    Linea_Credito_Optima: recomendacionLinea,
   };
 
   return resultado;
