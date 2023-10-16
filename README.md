@@ -37,4 +37,4 @@ Se llama a la función calculoMotor sin argumentos para ejecutarla y se almacena
 
 ## Presentación de resultados
 
-![Alt text](image-3.png)
+![Alt text](image-4.png)
