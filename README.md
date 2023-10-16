@@ -34,3 +34,7 @@ Con la finalidad de resolver cuántos meses se llevaba laborando apartir del ing
 se desarrolló una función extra
 
 ![Alt text](image-1.png)
+
+## Presentación de resultados
+
+![Alt text](image-3.png)

@@ -1,13 +1,36 @@
+// import { calcularMesesTrabajando } from './mesesTrabajando'
 const prompt = require("prompt-sync")({ sigint: true });
-// const { calcularMesesTrabajando, } = require('./mesesTrabajando')
 
 function calculoMotor(tipoNomina, fechaPrimerEmpleo, genero) {
   if (!tipoNomina) {
     tipoNomina = prompt("Ingrese el tipo de nómina (A, B, C, D):");
   }
   if (!fechaPrimerEmpleo) {
-    var fechaStr = prompt("Ingrese la fecha de primer empleo (YYYY-MM-DD):");
-    fechaPrimerEmpleo = new Date(fechaStr);
+    // calcularMesesTrabajando()
+    function calcularMesesTrabajando(diaIngreso, mesIngreso, añoIngreso) {
+      var fechaIngreso = new Date(añoIngreso, mesIngreso - 1, diaIngreso);
+
+      var fechaActual = new Date();
+
+      var diferenciaTiempo = fechaActual - fechaIngreso;
+
+      var milisegundosPorMes = 30 * 24 * 60 * 60 * 1000;
+      var mesesTrabajando = Math.floor(diferenciaTiempo / milisegundosPorMes);
+
+      return mesesTrabajando;
+    }
+    // Solicitar al usuario que ingrese la fecha de ingreso
+    var diaIngreso = prompt("Día de ingreso (DD):");
+    var mesIngreso = prompt(
+      "Mes de ingreso (1 para enero, 2 para febrero, etc.):"
+    );
+    var añoIngreso = prompt("Ingresa el año de ingreso (AAAA):");
+
+    var resultado = calcularMesesTrabajando(diaIngreso, mesIngreso, añoIngreso);
+    console.log("Meses trabajando: " + resultado);
+
+    // var fechaStr = prompt("Ingrese la fecha de primer empleo (YYYY-MM-DD):");
+    // fechaPrimerEmpleo = new Date(fechaStr);
   }
   if (!genero) {
     genero = prompt("Ingrese el género (m o f):");
@@ -38,6 +61,10 @@ function calculoMotor(tipoNomina, fechaPrimerEmpleo, genero) {
   }
 
   var resultado = {
+    Tipo_Nomina: tipoNomina,
+    Fecha_Primer_Empleo: `${diaIngreso}-${mesIngreso}-${añoIngreso}`,
+    Meses_Laborados: resultado,
+    Genero: genero,
     montoMinimo: montoMinimo,
     montoMaximo: montoMaximo,
     recomendacionLinea: recomendacionLinea,
@@ -46,10 +73,5 @@ function calculoMotor(tipoNomina, fechaPrimerEmpleo, genero) {
   return resultado;
 }
 
-// Ejemplo de uso
-//   var tipoNomina = "B";
-//   var fechaPrimerEmpleo = new Date("2020-03-15");
-//   var genero = "m";
-
 var resultado = calculoMotor();
-console.log(resultado);
+console.table(resultado);
