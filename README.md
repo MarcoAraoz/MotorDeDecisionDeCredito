@@ -5,35 +5,35 @@
 
 ![Alt text](image.png)
 
+Este código en JavaScript se encarga de calcular una serie de valores para recomendar una "Línea de crédito óptima" para un individuo. 
+
+Aquí hay una explicación paso a paso de lo que hace el código:
+
 ## Se creo un archivo js: motor.js
 
-Se definió una función de Javascript llamada 'calculoMotor' que tiene como parámetros de entrada: 
-tipoNomina (string), valor en {A, B, C, D}
-fechaPrimerEmpleo (Date),
-genero (string).
+Se define una función llamada calculoMotor que toma tres argumentos: tipoNomina, fechaPrimerEmpleo, y genero. Estos argumentos son opcionales, lo que significa que el código puede solicitar al usuario que los ingrese si no se proporcionan.
 
-Dentro de la función se tienen las variables con prompts:
-tipoNomina (valor en {A, B, C, D}),
-fechaPrimerEmpleo (valor tipo Date),
-genero (valor en {m, f}).
- 
-Dentro de la función se definen las variables montoMinimo, montoMaximo, recomendacionLinea
+Si tipoNomina no se proporciona (es nulo o indefinido), el código solicitará al usuario que ingrese el tipo de nómina (A, B, C, o D).
 
-monto minimo:
-if (tipoNomina === "A" && fechaPrimerEmpleo) {
-montoMinimo = 1000;
-montoMaximo = 5000;
-}
+Si fechaPrimerEmpleo no se proporciona (también nulo o indefinido), el código calcula la cantidad de meses que el individuo ha trabajado desde su fecha de ingreso. Esto se hace mediante una función llamada calcularMesesTrabajando, que toma el día, el mes y el año de ingreso como entrada y calcula la diferencia en meses entre la fecha actual y la fecha de ingreso.
 
-La salida de la función será un objeto que contenga los atributos: montoMinimo, montoMáximo y
-recomendacionLinea los cuales deberán de contener el monto mínimo y máximo de crédito y la recomendación óptima de la línea de crédito respectivamente.
+Si genero no se proporciona, el código solicita al usuario que ingrese su género (m o f).
 
-## Se creo un archivo js: mesesTabajando.js
+Luego, el código determina valores de montoMinimo y montoMaximo según el valor de tipoNomina. Dependiendo del tipo de nómina (A, B, C, o D), se asignan diferentes rangos de montos mínimos y máximos.
 
-Con la finalidad de resolver cuántos meses se llevaba laborando apartir del ingreso del empleado,
-se desarrolló una función extra
+La variable recomendacionLinea se establece en función del género. Si el género es "m" (masculino), la recomendación es para hombres. Si es "f" (femenino), la recomendación es para mujeres. En cualquier otro caso, se establece como "Línea de crédito no determinada".
 
-![Alt text](image-1.png)
+Se crea un objeto llamado resultado que contiene los siguientes campos:
+
+Tipo_Nomina: el tipo de nómina ingresado.
+Fecha_Primer_Empleo: la fecha de ingreso formateada como "DD-MM-AAAA".
+Meses_Laborados: la cantidad de meses trabajados.
+Genero: el género ingresado.
+montoMinimo y montoMaximo: los valores calculados en función del tipo de nómina.
+recomendacionLinea: la recomendación de la línea de crédito.
+Finalmente, se devuelve el objeto resultado.
+
+Se llama a la función calculoMotor sin argumentos para ejecutarla y se almacena el resultado en la variable resultado. Luego, se muestra la información contenida en resultado en una tabla utilizando console.table.
 
 ## Presentación de resultados
 
